@@ -1,9 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// base: './' makes all asset paths relative, which works for GitHub Pages
-// project sites (https://user.github.io/REPO/) and for itch.io HTML uploads.
+// Served from https://minhsonneall.github.io/EXE201-Landing/ — the base must
+// match the repo name so asset URLs resolve under that sub-path.
 export default defineConfig({
   plugins: [react()],
-  base: './',
+  base: '/EXE201-Landing/',
 })

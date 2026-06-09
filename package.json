@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://YOUR_USERNAME.github.io/POTWH-Landing/",
+  "homepage": "https://minhsonneall.github.io/EXE201-Landing/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
