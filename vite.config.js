@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// Served from https://minhsonneall.github.io/EXE201-Landing/ — the base must
-// match the repo name so asset URLs resolve under that sub-path.
+// Relative base so asset URLs resolve correctly BOTH on the github.io project
+// path (…/EXE201-Landing/) AND when served from a custom domain root (/).
+// Using an absolute base like '/EXE201-Landing/' breaks the custom domain.
 export default defineConfig({
   plugins: [react()],
-  base: '/EXE201-Landing/',
+  base: './',
 })
