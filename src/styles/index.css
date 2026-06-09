@@ -503,6 +503,55 @@ section { padding: clamp(64px, 9vw, 130px) clamp(20px, 5vw, 64px); }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ── Floating social bubble (FAB) ──────────────────────────────────── */
+.social-fab {
+  position: fixed; right: 22px; bottom: 22px; z-index: 60;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+}
+.social-fab__items { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+
+.social-fab__item {
+  width: 52px; height: 52px; border-radius: 50%;
+  display: grid; place-items: center; color: #fff;
+  background: rgba(20, 16, 32, 0.92); border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  position: relative;
+  transform: translateY(14px) scale(0.5); opacity: 0; pointer-events: none;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.28s ease, background 0.2s ease;
+}
+.social-fab.is-open .social-fab__item { transform: none; opacity: 1; pointer-events: auto; }
+.social-fab.is-open .social-fab__item:nth-child(1) { transition-delay: 0.04s; }
+.social-fab.is-open .social-fab__item:nth-child(2) { transition-delay: 0.09s; }
+.social-fab__item:hover { background: var(--brand); transform: translateY(-2px) scale(1.08); }
+.social-fab__item svg { width: 24px; height: 24px; }
+
+/* hover label */
+.social-fab__item::after {
+  content: attr(data-label);
+  position: absolute; right: 64px; top: 50%; transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.82); color: #fff; padding: 5px 11px; border-radius: 8px;
+  font-size: 0.82rem; font-weight: 600; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 0.2s ease;
+}
+.social-fab__item:hover::after { opacity: 1; }
+
+.social-fab__toggle {
+  width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer;
+  background: var(--accent); color: #0a0a10;
+  box-shadow: 0 10px 30px var(--glow);
+  display: grid; place-items: center;
+  transition: transform 0.25s ease, background 0.2s linear, box-shadow 0.2s linear;
+}
+.social-fab__toggle:hover { transform: scale(1.08); }
+.social-fab.is-open .social-fab__toggle { transform: rotate(90deg); }
+.social-fab__toggle svg { width: 26px; height: 26px; }
+
+@media (max-width: 600px) {
+  .social-fab { right: 16px; bottom: 16px; }
+  .social-fab__toggle { width: 54px; height: 54px; }
+  .social-fab__item { width: 48px; height: 48px; }
+}
+
 /* ── Motion-reduction ─────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition-duration: 0.2s !important; }

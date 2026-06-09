@@ -11,6 +11,7 @@ import Gallery from './components/Gallery.jsx'
 import Trailer from './components/Trailer.jsx'
 import Download from './components/Download.jsx'
 import Footer from './components/Footer.jsx'
+import SocialBubble from './components/SocialBubble.jsx'
 
 // Pre-extract the color stops once.
 const ACCENT = DIFFICULTIES.map((d) => d.accent)
@@ -97,6 +98,7 @@ export default function App() {
         <Download theme={theme} />
       </main>
       <Footer />
+      <SocialBubble />
     </div>
   )
 }
