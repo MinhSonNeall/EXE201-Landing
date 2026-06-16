@@ -26,7 +26,7 @@ export default function Nav() {
         <a href="#trailer">Gameplay</a>
       </nav>
 
-      <a className="btn btn--small" href={ITCH_URL} target="_blank" rel="noreferrer">
+      <a className="btn btn--small" href={ITCH_URL} target="_blank" rel="noopener">
         Play on itch.io
       </a>
     </header>

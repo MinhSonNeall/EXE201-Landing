@@ -14,7 +14,7 @@ export default function Download({ theme }) {
           Princess of the Wild Hunt is free to play on PC. The chase is waiting —
           currently tuned to <strong style={{ color: 'var(--accent-soft)' }}>{theme.label}</strong>.
         </p>
-        <a className="btn btn--primary btn--lg" href={ITCH_URL} target="_blank" rel="noreferrer">
+        <a className="btn btn--primary btn--lg" href={ITCH_URL} target="_blank" rel="noopener">
           ▶ Download Free on itch.io
         </a>
 

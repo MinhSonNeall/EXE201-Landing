@@ -27,7 +27,7 @@ export default function Hero({ theme }) {
         </p>
 
         <div className="hero__cta">
-          <a className="btn btn--primary btn--lg" href={ITCH_URL} target="_blank" rel="noreferrer">
+          <a className="btn btn--primary btn--lg" href={ITCH_URL} target="_blank" rel="noopener">
             ▶ Download on itch.io
           </a>
           <a className="btn btn--ghost btn--lg" href="#trailer">

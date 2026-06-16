@@ -10,7 +10,12 @@ export default function Footer() {
         </div>
         <nav className="footer__socials">
           {SOCIALS.map((s) => (
-            <a key={s.label} href={s.href} target="_blank" rel="noreferrer">
+            <a
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel={s.label === 'itch.io' ? 'noopener' : 'noreferrer'}
+            >
               {s.label}
             </a>
           ))}
